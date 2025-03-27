@@ -1,0 +1,141 @@
+.kontaktContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.kontaktContent {
+  position: relative;
+  width: 50%;
+  max-width: 1200px;
+  height: 90%;
+  background-color: #1a1819;
+  border-radius: 10px;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  background-image: var(--frame-image);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 200px;
+  pointer-events: auto;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #f5f2f4;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.kontaktHeader {
+  margin-bottom: 2rem;
+  color: #f5f2f4;
+}
+
+.kontaktHeader h2 {
+  color: #f5f2f4;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.kontaktBody {
+  flex: 1;
+  color: #f5f2f4;
+  width: 100%;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.section h3 {
+  color: #f5f2f4;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #3e3b3c;
+  padding-bottom: 0.5rem;
+}
+
+/* Specifika stilar för kontaktinformation */
+.contactInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.contactItem {
+  color: #a0a0a0;
+}
+
+.contactItem h4 {
+  color: #f5f2f4;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.contactItem p {
+  margin: 0.3rem 0;
+}
+
+/* Stilar för öppettider */
+.openingHours {
+  color: #a0a0a0;
+}
+
+.dayTime {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #3e3b3c;
+}
+
+.directions, .booking {
+  color: #a0a0a0;
+  line-height: 1.6;
+}
+
+/* Styling för scrollbar */
+.kontaktBody::-webkit-scrollbar {
+  width: 8px;
+}
+
+.kontaktBody::-webkit-scrollbar-track {
+  background: #1a1819;
+}
+
+.kontaktBody::-webkit-scrollbar-thumb {
+  background: #3e3b3c;
+  border-radius: 4px;
+}
+
+.kontaktBody::-webkit-scrollbar-thumb:hover {
+  background: #4e4b4c;
+}
