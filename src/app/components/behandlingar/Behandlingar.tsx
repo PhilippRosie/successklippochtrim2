@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import styles from './Behandlingar.module.css';
 import frameSideImage from '../../../assets/images/homepage-img/homepage-frameside.png';
+import { playfairDisplaySC, amaticSC } from '../../fonts';
 
 interface BehandlingarProps {
   onClose: () => void;
@@ -17,12 +18,12 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
         style={{ '--frame-image': `url(${frameSideImage.src})` } as React.CSSProperties}
       >
         <button className={styles.closeButton} onClick={onClose}>×</button>
-        <div className={styles.behandlingarHeader}>
+        <div className={`${styles.behandlingarHeader} ${playfairDisplaySC.className}`}>
           <h2>Behandlingar</h2>
         </div>
         <div className={styles.behandlingarBody}>
           <section className={styles.section}>
-            <h3>Klippning</h3>
+            <h3 className={`${amaticSC.className}`}>Klippning</h3>
             <div className={styles.behandling}>
               <span>Klippning XS-S</span>
               <div className={styles.info}>
@@ -54,7 +55,7 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
           </section>
 
           <section className={styles.section}>
-            <h3>Fällnings behandling</h3>
+            <h3 className={`${amaticSC.className}`}>Fällnings behandling</h3>
             <div className={styles.behandling}>
               <span>Fällnings behandling XS-S</span>
               <div className={styles.info}>
@@ -79,7 +80,7 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
           </section>
 
           <section className={styles.section}>
-            <h3>Drop In Kloklipp, puts och analtömning</h3>
+            <h3 className={`${amaticSC.className}`}>Drop In Kloklipp, puts och analtömning</h3>
             <div className={styles.behandling}>
               <span>Kloklipp</span>
               <div className={styles.info}>
@@ -104,7 +105,7 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
           </section>
 
           <section className={styles.section}>
-            <h3>SPA behandling</h3>
+            <h3 className={`${amaticSC.className}`}>SPA behandling</h3>
             <div className={styles.behandling}>
               <span>Spa XS-S</span>
               <div className={styles.info}>
@@ -129,7 +130,7 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
           </section>
 
           <section className={styles.section}>
-            <h3>Kloklipp, puts, öronplock och anal</h3>
+            <h3 className={`${amaticSC.className}`}>Kloklipp, puts, öronplock och analtömning</h3>
             <div className={styles.behandling}>
               <span>Kloklipp bokning</span>
               <div className={styles.info}>
@@ -175,7 +176,7 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
           </section>
 
           <section className={styles.section}>
-            <h3>Trimning</h3>
+            <h3 className={`${amaticSC.className}`}>Trimning</h3>
             <div className={styles.behandling}>
               <span>Trimning XS-S</span>
               <div className={styles.info}>
