@@ -37,8 +37,8 @@
 
 .closeButton {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 14%;
+  right: 12%;
   background: none;
   border: none;
   color: #f5f2f4;
@@ -77,16 +77,23 @@
 
 .section h3 {
   color: #f5f2f4;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid #3e3b3c;
   padding-bottom: 0.5rem;
+  text-align: center;
 }
 
 .section p {
   line-height: 1.6;
   margin-bottom: 1.5rem;
   color: #a0a0a0;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .certList {
@@ -117,4 +124,20 @@
 
 .ommigBody::-webkit-scrollbar-thumb:hover {
   background: #4e4b4c;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.ommigImage {
+  width: auto;
+  height: auto;
+  max-width: 70%;
+  border-radius: 8px;
+  object-fit: cover;
 }

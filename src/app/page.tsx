@@ -16,6 +16,7 @@ import Modal from './components/modal/Modal';
 import Behandlingar from './components/behandlingar/Behandlingar';
 import Ommig from './components/ommig/Ommig';
 import Kontakt from './components/kontakt/Kontakt';
+import { playfairDisplaySC } from './fonts';
 
 // Huvudkomponenten för startsidan
 export default function Home() {
@@ -121,19 +122,19 @@ export default function Home() {
            style={{ '--frame-image': `url(${frameImage.src})` } as React.CSSProperties}>
         {/* Menyelement */}
         <div 
-          className={styles.menuItem} 
+          className={`${styles.menuItem} ${playfairDisplaySC.className}`} 
           onClick={() => setShowBehandlingar(true)}
         >
           Behandlingar
         </div>
         <div 
-          className={styles.menuItem} 
+          className={`${styles.menuItem} ${playfairDisplaySC.className}`} 
           onClick={() => setShowOmmig(true)}
         >
           Om Mig
         </div>
         <div 
-          className={styles.menuItem} 
+          className={`${styles.menuItem} ${playfairDisplaySC.className}`} 
           onClick={() => setShowKontakt(true)}
         >
           Kontakt
