@@ -30,10 +30,6 @@ export default function Home() {
 
   // Lägg till dessa states högst upp i komponenten
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState<{
-    title: string;
-    content: React.ReactNode;
-  } | null>(null);
 
   // I komponenten, lägg till state för att kontrollera visning av behandlingar
   const [showBehandlingar, setShowBehandlingar] = useState(false);
@@ -135,18 +131,6 @@ export default function Home() {
         </div>
       </div>
       
-      {/* Lägg till Modal-komponenten i slutet av return */}
-      {modalContent && (
-        <Modal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          title={modalContent.title}
-          frameImage={frameSideImage.src}
-        >
-          {modalContent.content}
-        </Modal>
-      )}
-
       {/* Lägg till Treatments-komponenten i slutet av return */}
       {showBehandlingar && (
         <Behandlingar onClose={() => setShowBehandlingar(false)} />
