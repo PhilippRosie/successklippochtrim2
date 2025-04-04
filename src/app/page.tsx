@@ -54,12 +54,6 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []); // Tom dependency array betyder att detta körs en gång vid mount
 
-  // Lägg till denna funktion
-  const handleMenuClick = (title: string, content: React.ReactNode) => {
-    setModalContent({ title, content });
-    setIsModalOpen(true);
-  };
-
   return (
     <div className={styles.container}>
       <Header isVisible={showMenu} />
