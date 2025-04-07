@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import styles from './Kontakt.module.css';
 import frameSideImage from '../../../assets/images/homepage-img/homepage-frameside.png';
 import { playfairDisplaySC, amaticSC } from '../../fonts';
@@ -27,7 +26,7 @@ export default function Kontakt({ onClose }: KontaktProps) {
             <div className={styles.contactInfo}>
               <div className={styles.contactItem}>
                 <h4>Telefon</h4>
-                <p>079-3117616</p>
+                <p>0793-117616</p>
               </div>
 
               <div className={styles.contactItem}>

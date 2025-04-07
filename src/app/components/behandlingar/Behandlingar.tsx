@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import styles from './Behandlingar.module.css';
 import frameSideImage from '../../../assets/images/homepage-img/homepage-frameside.png';
 import { playfairDisplaySC, amaticSC } from '../../fonts';

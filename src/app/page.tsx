@@ -10,9 +10,7 @@ import styles from './page.module.css' // Importerar CSS-modulen för styling
 import foreground from '../assets/images/homepage-img/forground.png' // Importerar foreground-bilden (porten)
 import backgroundPark from '../assets/images/homepage-img/background-park.png' // Importerar bakgrundsbilden (parken)
 import frameImage from '../assets/images/homepage-img/homepage-frame.png';
-import frameSideImage from '../assets/images/homepage-img/homepage-frameside.png';
 import Header from './components/header/Header';
-import Modal from './components/modal/Modal';
 import Behandlingar from './components/behandlingar/Behandlingar';
 import Ommig from './components/ommig/Ommig';
 import Kontakt from './components/kontakt/Kontakt';
@@ -27,13 +25,6 @@ export default function Home() {
   // State för att kontrollera när bakgrundseffekten ska starta
   // false = ingen effekt, true = gråskala och blur effekt
   const [startBackgroundEffect, setStartBackgroundEffect] = useState(false);
-
-  // Lägg till dessa states högst upp i komponenten
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState<{
-    title: string;
-    content: React.ReactNode;
-  } | null>(null);
 
   // I komponenten, lägg till state för att kontrollera visning av behandlingar
   const [showBehandlingar, setShowBehandlingar] = useState(false);
@@ -53,12 +44,6 @@ export default function Home() {
     // Detta förhindrar minnesläckor genom att rensa timern
     return () => clearTimeout(timer);
   }, []); // Tom dependency array betyder att detta körs en gång vid mount
-
-  // Lägg till denna funktion
-  const handleMenuClick = (title: string, content: React.ReactNode) => {
-    setModalContent({ title, content });
-    setIsModalOpen(true);
-  };
 
   return (
     <div className={styles.container}>
@@ -141,18 +126,6 @@ export default function Home() {
         </div>
       </div>
       
-      {/* Lägg till Modal-komponenten i slutet av return */}
-      {modalContent && (
-        <Modal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          title={modalContent.title}
-          frameImage={frameSideImage.src}
-        >
-          {modalContent.content}
-        </Modal>
-      )}
-
       {/* Lägg till Treatments-komponenten i slutet av return */}
       {showBehandlingar && (
         <Behandlingar onClose={() => setShowBehandlingar(false)} />
