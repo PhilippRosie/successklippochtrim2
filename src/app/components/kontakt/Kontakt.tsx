@@ -26,7 +26,7 @@ export default function Kontakt({ onClose }: KontaktProps) {
             <div className={styles.contactInfo}>
               <div className={styles.contactItem}>
                 <h4>Telefon</h4>
-                <p>079-3117616</p>
+                <p>0793-117616</p>
               </div>
 
               <div className={styles.contactItem}>
