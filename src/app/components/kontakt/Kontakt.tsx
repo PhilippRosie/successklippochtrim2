@@ -3,12 +3,33 @@
 import styles from './Kontakt.module.css';
 import frameSideImage from '../../../assets/images/homepage-img/homepage-frameside.png';
 import { playfairDisplaySC, amaticSC } from '../../fonts';
+import dynamic from 'next/dynamic';
+import 'leaflet/dist/leaflet.css';
+import { LatLngExpression } from 'leaflet';
+import { useEffect } from 'react';
+
+const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
+const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
+const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
+const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false });
 
 interface KontaktProps {
   onClose: () => void;
 }
 
 export default function Kontakt({ onClose }: KontaktProps) {
+  const position: LatLngExpression = [56.8333, 13.9333];
+
+  useEffect(() => {
+    const L = require('leaflet');
+    delete L.Icon.Default.prototype._getIconUrl;
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+      iconUrl: require('leaflet/dist/images/marker-icon.png'),
+      shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+    });
+  }, []);
+
   return (
     <div className={styles.kontaktContainer} onClick={onClose}>
       <div 
@@ -34,10 +55,23 @@ export default function Kontakt({ onClose }: KontaktProps) {
                 <p>successklippochtrim@gmail.com</p>
               </div>
               <div className={styles.contactItem}>
+                <div>
                 <h4>Adress</h4>
                 <p>Success Klipp och Trim</p>
                 <p>Kånnavägen 11</p>
                 <p>34131 Ljungby</p>
+                </div>
+                <div style={{ height: '200px', width: '100%' }}>
+                  <MapContainer center={position} zoom={13} style={{ height: '100%', width: '100%' }}>
+                    <TileLayer
+                      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                      attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+                    />
+                    <Marker position={position}>
+                      <Popup>Success Klipp och Trim</Popup>
+                    </Marker>
+                  </MapContainer>
+                </div>
               </div>
             </div>
           </section>
@@ -77,22 +111,7 @@ export default function Kontakt({ onClose }: KontaktProps) {
               </div>
             </div>
           </section>
-
-          <section className={styles.section}>
-            <h3 className={`${amaticSC.className}`}>Hitta hit</h3>
-            <p className={styles.directions}>
-              Vi finns centralt belägna med goda parkeringsmöjligheter. 
-              Lokalen är handikappanpassad och lätt att hitta till.
-            </p>
-          </section>
-
-          <section className={styles.section}>
-            <h3 className={`${amaticSC.className}`}>Bokning</h3>
-            <p className={styles.booking}>
-              Boka tid genom att ringa eller skicka e-post. 
-              Vi återkommer så snart som möjligt för att bekräfta din bokning.
-            </p>
-          </section>
+          
         </div>
       </div>
     </div>
