@@ -9,12 +9,13 @@ import Image from 'next/image'; // Next.js optimerad bildkomponent
 import styles from './page.module.css' // Importerar CSS-modulen för styling
 import foreground from '../assets/images/homepage-img/forground.png' // Importerar foreground-bilden (porten)
 import backgroundPark from '../assets/images/homepage-img/background-park.png' // Importerar bakgrundsbilden (parken)
-import frameImage from '../assets/images/homepage-img/homepage-frame.png';
+import frameImageSide from '../assets/images/homepage-img/homepage-frameside.png';
 import Header from './components/header/Header';
 import Behandlingar from './components/behandlingar/Behandlingar';
 import Ommig from './components/ommig/Ommig';
 import Kontakt from './components/kontakt/Kontakt';
 import { playfairDisplaySC } from './fonts';
+import logo from '../assets/images/homepage-img/logo.png'
 
 // Huvudkomponenten för startsidan
 export default function Home() {
@@ -50,79 +51,98 @@ export default function Home() {
       <Header isVisible={showMenu} />
       {/* Container för bilderna */}
       <div className={styles.imageContainer}>
-        {/* Bakgrundsbilden med gråskala och blur-effekt */}
+        {/* Bakgrundsbilden */}
         <motion.div
           className={styles.backgroundContainer}
-          // Animerar bakgrunden endast när startBackgroundEffect är true
           animate={startBackgroundEffect ? {
-            // Går från normal färg till gråskala och blur
             filter: ['grayscale(0%) blur(0px)', 'grayscale(100%) blur(10px)'],
           } : {}}
-          // Animeringsinställningar
           transition={{ 
-            duration: 1.5, // Tar 1.5 sekunder
-            ease: "easeInOut" // Mjuk acceleration och retardation
+            duration: 1.5,
+            ease: "easeInOut"
           }}
         >
-          {/* Bakgrundsbilden */}
           <Image 
             src={backgroundPark}
             alt="Background" 
             className={styles.backgroundImage}
-            fill // Fyller hela containern
+            fill
+          />
+        </motion.div>
+
+        {/* Logotypen */}
+        <motion.div
+          className={styles.logoContainer}
+          initial={{ scale: 0.15, opacity: 0.3 }}
+          animate={{ 
+            scale: [0.15, 0.75, 1],
+            opacity: [0.3, 1, 0],
+            z: [0, 1200, 2000]
+          }}
+          transition={{ 
+            duration: 7,
+            times: [0, 0.8, 1],
+            ease: "easeInOut"
+          }}
+        >
+          <Image 
+            src={logo}
+            alt="Logo"
+            className={styles.logoImage}
+            width={150}
+            height={150}
+            quality={100}
+            priority
+            unoptimized
           />
         </motion.div>
         
-        {/* Foreground-bilden (porten) med zoom-effekt */}
+        {/* Foreground-bilden (porten) */}
         <motion.div
           className={styles.foregroundContainer}
-          // Startposition
           initial={{ scale: 1 }}
-          // Animeringsmål
           animate={{ 
-            scale: 5, // Zoomar in 5x
-            filter: ['blur(0px)', 'blur(0px)', 'blur(20px)'], // Blur-effekt mot slutet
-            opacity: [1, 1, 0] // Förblir synlig tills slutet
+            scale: 5,
+            filter: ['blur(0px)', 'blur(0px)', 'blur(20px)'],
+            opacity: [1, 1, 0]
           }}
-          // Animeringsinställningar
           transition={{ 
-            duration: 7, // Tar 7 sekunder
-            times: [0, 0.8, 1], // Timing för olika steg i animationen
-            ease: "easeInOut" // Mjuk acceleration och retardation
+            duration: 7,
+            times: [0, 0.8, 1],
+            ease: "easeInOut"
           }}
         >
-          {/* Foreground-bilden */}
           <Image 
             src={foreground}
             alt="Foreground" 
             className={styles.foregroundImage}
-            fill // Fyller hela containern
-            priority // Prioriterar laddning av bilden
+            fill
+            priority
           />
         </motion.div>
       </div>
 
       {/* Menycontainer som fadear in */}
       <div className={`${styles.menuContainer} ${showMenu ? styles.visible : ''}`} 
-           style={{ '--frame-image': `url(${frameImage.src})` } as React.CSSProperties}>
+           style={{ '--frame-image': `url(${frameImageSide.src})` } as React.CSSProperties}>
         {/* Menyelement */}
         <div 
           className={`${styles.menuItem} ${playfairDisplaySC.className}`} 
           onClick={() => setShowBehandlingar(true)}
         >
-          Behandlingar
+          <span className={styles.menuText}>Behandlingar</span>
         </div>
         <div 
           className={`${styles.menuItem} ${playfairDisplaySC.className}`} 
           onClick={() => setShowOmmig(true)}
         >
-          Om Mig
+          <span className={styles.menuText}>Om Mig</span>
         </div>
         <div 
           className={`${styles.menuItem} ${playfairDisplaySC.className}`} 
           onClick={() => setShowKontakt(true)}
         >
-          Kontakt
+          <span className={styles.menuText}>Kontakt</span>
         </div>
       </div>
       

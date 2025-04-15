@@ -24,7 +24,7 @@ export default function Header({ isVisible }: HeaderProps) {
             alt="Success Klipp och Trim Logo"
             className={styles.logo}
             width={200}
-            height={150}
+            height={250}
             priority
           />
         </Link>

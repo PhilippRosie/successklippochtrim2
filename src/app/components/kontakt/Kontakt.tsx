@@ -6,7 +6,8 @@ import { playfairDisplaySC, amaticSC } from '../../fonts';
 import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
 import { LatLngExpression } from 'leaflet';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import L from 'leaflet';
 
 const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
 const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
@@ -19,14 +20,19 @@ interface KontaktProps {
 
 export default function Kontakt({ onClose }: KontaktProps) {
   const position: LatLngExpression = [56.8333, 13.9333];
+  const [L, setL] = useState<any>(null);
 
   useEffect(() => {
-    const L = require('leaflet');
-    delete L.Icon.Default.prototype._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-      iconUrl: require('leaflet/dist/images/marker-icon.png'),
-      shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+    // Importera Leaflet endast på klientsidan
+    const leaflet = require('leaflet');
+    setL(leaflet);
+    
+    // Fixa ikonerna med CDN-länkar
+    delete leaflet.Icon.Default.prototype._getIconUrl;
+    leaflet.Icon.Default.mergeOptions({
+      iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+      iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
     });
   }, []);
 
@@ -61,14 +67,20 @@ export default function Kontakt({ onClose }: KontaktProps) {
                 <p>Kånnavägen 11</p>
                 <p>34131 Ljungby</p>
                 </div>
-                <div style={{ height: '200px', width: '100%' }}>
+                <div style={{ height: '300px', width: '100%' }}>
                   <MapContainer center={position} zoom={13} style={{ height: '100%', width: '100%' }}>
                     <TileLayer
-                      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                      attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+                      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                      url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                     />
                     <Marker position={position}>
-                      <Popup>Success Klipp och Trim</Popup>
+                      <Popup>
+                        Success Klipp och Trim
+                        <br />
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=56.8333,13.9333" target="_blank" rel="noopener noreferrer">
+                          Vägbeskrivning
+                        </a>
+                      </Popup>
                     </Marker>
                   </MapContainer>
                 </div>
