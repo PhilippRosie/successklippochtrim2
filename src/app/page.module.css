@@ -56,9 +56,10 @@
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: row;  /* Ändrar till kolumn-layout */
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 5rem;  /* Ökar avståndet mellan elementen */
   z-index: 10;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
@@ -85,7 +86,7 @@
   animation: fadeIn 1.5s ease-in-out forwards;
   font-size: 1.5rem;
   text-align: center;
-  padding: 0 20px;
+  padding: 1rem;
   max-width: 70%;
   position: relative;
   z-index: 1;
@@ -122,6 +123,12 @@
 .menuItem:nth-child(2) { animation-delay: 0.4s; }
 .menuItem:nth-child(3) { animation-delay: 0.6s; }
 
+.menuText {
+  position: relative;
+  z-index: 1;
+  padding: 0.5rem;
+}
+
 /* Keyframes för fade-in animationen */
 @keyframes fadeIn {
   from {
@@ -139,7 +146,7 @@
 
 @media (max-width: 1440px) {
   .menuItem {
-    width: 400px;
+    width: 420px;
     font-size: 1.3rem;
   }
 }
@@ -149,27 +156,55 @@
     gap: 2rem;
   }
   .menuItem {
-    width: 350px;
+    width: 400px;
     font-size: 1.2rem;
   }
 }
 
 @media (max-width: 768px) {
   .menuContainer {
-    gap: 1.5rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 11rem;
+    gap: 2rem;
   }
   .menuItem {
-    width: 280px;
+    width: 320px;
     font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .menuContainer {
-    gap: 1rem;
+    gap: 2rem;
   }
   .menuItem {
-    width: 200px;
+    width: 320px;
+    font-size: 0.9rem;
+  }
+}
+
+/* iPhone Pro Max */
+@media (max-width: 430px) {
+  .menuContainer {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2.5rem;
+  }
+  .menuItem {
+    width: 300px;
+    font-size: 1rem;
+  }
+}
+
+/* Mindre mobiler */
+@media (max-width: 380px) {
+  .menuContainer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .menuItem {
+    width: 250px;
     font-size: 0.9rem;
   }
 }
@@ -199,3 +234,4 @@
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
+

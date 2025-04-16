@@ -3,12 +3,27 @@
 import styles from './Behandlingar.module.css';
 import frameSideImage from '../../../assets/images/homepage-img/homepage-frameside.png';
 import { playfairDisplaySC, amaticSC } from '../../fonts';
+import { useState, useEffect } from 'react';
 
 interface BehandlingarProps {
   onClose: () => void;
 }
 
 export default function Behandlingar({ onClose }: BehandlingarProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    handleResize(); // Kör direkt för initial check
+    window.addEventListener('resize', handleResize);
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className={styles.behandlingarContainer} onClick={onClose}>
       <div 
@@ -52,6 +67,7 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
               </div>
             </div>
           </section>
+          <br />
 
           <section className={styles.section}>
             <h3 className={`${amaticSC.className}`}>Fällnings behandling</h3>
@@ -77,6 +93,7 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
               </div>
             </div>
           </section>
+          <br />
 
           <section className={styles.section}>
             <h3 className={`${amaticSC.className}`}>Drop In Kloklipp, puts och analtömning</h3>
@@ -102,6 +119,7 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
               </div>
             </div>
           </section>
+          <br />
 
           <section className={styles.section}>
             <h3 className={`${amaticSC.className}`}>SPA behandling</h3>
@@ -127,6 +145,7 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
               </div>
             </div>
           </section>
+          <br />
 
           <section className={styles.section}>
             <h3 className={`${amaticSC.className}`}>Kloklipp, puts, öronplock och analtömning</h3>
@@ -173,6 +192,7 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
               </div>
             </div>
           </section>
+          <br />
 
           <section className={styles.section}>
             <h3 className={`${amaticSC.className}`}>Trimning</h3>

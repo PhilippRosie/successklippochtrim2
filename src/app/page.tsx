@@ -120,6 +120,22 @@ export default function Home() {
             priority
           />
         </motion.div>
+
+        <motion.div 
+          className={styles.parkImageContainer}
+          initial={{ scale: 1, y: 0 }}
+          animate={{ 
+            scale: [1, 1.1, 1.15],
+            y: [0, -20, -30],
+          }}
+          transition={{
+            duration: 7,
+            times: [0, 0.7, 1],
+            ease: "easeIn"
+          }}
+        >
+      
+        </motion.div>
       </div>
 
       {/* Menycontainer som fadear in */}
@@ -142,7 +158,7 @@ export default function Home() {
           className={`${styles.menuItem} ${playfairDisplaySC.className}`} 
           onClick={() => setShowKontakt(true)}
         >
-          <span className={styles.menuText}>Kontakt</span>
+          <span className={styles.menuText}>Kontakt <br /> & <br /> Information</span>
         </div>
       </div>
       
