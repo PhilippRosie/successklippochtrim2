@@ -7,8 +7,8 @@ import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
 import { LatLngExpression } from 'leaflet';
 import { useEffect, useState } from 'react';
-import L from 'leaflet';
 
+// Dynamiskt importera Leaflet för att undvika server-side rendering-problem
 const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
 const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
 const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
@@ -26,28 +26,35 @@ export default function Kontakt({ onClose }: KontaktProps) {
 
   useEffect(() => {
     setIsMounted(true);
+    
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      if (typeof window !== 'undefined') {
+        setIsMobile(window.innerWidth <= 768);
+      }
     };
     
     handleResize();
-    window.addEventListener('resize', handleResize);
     
     if (typeof window !== 'undefined') {
-      L.Icon.Default.mergeOptions({
-        iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+      window.addEventListener('resize', handleResize);
+      
+      // Konfigurera Leaflet-ikoner dynamiskt
+      import('leaflet').then(L => {
+        L.Icon.Default.mergeOptions({
+          iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+          iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+          shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+        });
       });
+      
+      return () => window.removeEventListener('resize', handleResize);
     }
-
-    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <div className={styles.kontaktContainer} onClick={onClose}>
       <div 
-        className={`${styles.kontaktContent} ${isMobile ? styles.mobile : ''}`}
+        className={`${styles.kontaktContent} ${isMounted && isMobile ? styles.mobile : ''}`}
         onClick={e => e.stopPropagation()}
         style={{ '--frame-image': `url(${frameSideImage.src})` } as React.CSSProperties}
       >

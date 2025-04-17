@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import styles from './Header.module.css';
 import logo from '../../../assets/images/logo/successklippochtrimlogo.png';
 
@@ -10,9 +11,11 @@ interface HeaderProps {
 }
 
 export default function Header({ isVisible }: HeaderProps) {
+  const router = useRouter();
+  
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.location.href = '/';
+    router.push('/');
   };
 
   return (

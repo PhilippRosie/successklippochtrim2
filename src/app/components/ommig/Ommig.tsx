@@ -13,22 +13,29 @@ interface OmmigProps {
 
 export default function Ommig({ onClose }: OmmigProps) {
   const [isMobile, setIsMobile] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+    
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      if (typeof window !== 'undefined') {
+        setIsMobile(window.innerWidth <= 768);
+      }
     };
 
     handleResize(); // Kör direkt för initial check
-    window.addEventListener('resize', handleResize);
     
-    return () => window.removeEventListener('resize', handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
   }, []);
 
   return (
     <div className={styles.ommigContainer} onClick={onClose}>
       <div 
-        className={`${styles.ommigContent} ${isMobile ? styles.mobile : ''}`}
+        className={`${styles.ommigContent} ${isMounted && isMobile ? styles.mobile : ''}`}
         onClick={e => e.stopPropagation()}
         style={{ '--frame-image': `url(${frameSideImage.src})` } as React.CSSProperties}
       >
