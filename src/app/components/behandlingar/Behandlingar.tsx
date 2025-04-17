@@ -13,7 +13,6 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -27,7 +26,7 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
   return (
     <div className={styles.behandlingarContainer} onClick={onClose}>
       <div 
-        className={styles.behandlingarContent}
+        className={`${styles.behandlingarContent} ${isMobile ? styles.mobile : ''}`}
         onClick={e => e.stopPropagation()}
         style={{ '--frame-image': `url(${frameSideImage.src})` } as React.CSSProperties}
       >

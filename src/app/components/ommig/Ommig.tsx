@@ -17,10 +17,8 @@ export default function Ommig({ onClose }: OmmigProps) {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
-      
     };
 
-    
     handleResize(); // Kör direkt för initial check
     window.addEventListener('resize', handleResize);
     
@@ -30,13 +28,13 @@ export default function Ommig({ onClose }: OmmigProps) {
   return (
     <div className={styles.ommigContainer} onClick={onClose}>
       <div 
-        className={styles.ommigContent}
+        className={`${styles.ommigContent} ${isMobile ? styles.mobile : ''}`}
         onClick={e => e.stopPropagation()}
         style={{ '--frame-image': `url(${frameSideImage.src})` } as React.CSSProperties}
       >
         <button className={styles.closeButton} onClick={onClose}>×</button>
-        <div className={styles.ommigHeader}>
-          <h2 className={`${playfairDisplaySC.className}`}>Om Mig</h2>
+        <div className={`${styles.ommigHeader} ${playfairDisplaySC.className}`}>
+          <h2>Om mig</h2>
         </div>
         <div className={styles.ommigBody}>
           <section className={styles.section}>
@@ -65,7 +63,7 @@ export default function Ommig({ onClose }: OmmigProps) {
             <p className={styles.ommigText}>
               Det bästa jag vet är att få bygga relationer – både med mina fyrbenta kunder och deras matte eller 
               husse. Hos mig ska du alltid känna dig sedd, välkommen och trygg. Målet? Att din hund ska lämna 
-              salongen glad, stolt och skinande fin – och att du som ägare känner: "Här vill jag komma tillbaka."
+              salongen glad, stolt och skinande fin – och att du som ägare känner: &ldquo;Här vill jag komma tillbaka.&rdquo;
             </p>
             <br />
           </section>
@@ -86,7 +84,7 @@ export default function Ommig({ onClose }: OmmigProps) {
               En av mina stora inspirationskällor är Gun, en uppfödare och vän som tidigt lärde mig grunderna i 
               klippning. Men livet tog mig på andra vägar ett tag – tills en dag då min barndomsvän Jennie, som 
               jag känt sedan vi var sju, ringde och skojade:
-              "Ska du inte börja utbilda dig hos mig och starta eget?"
+              &ldquo;Ska du inte börja utbilda dig hos mig och starta eget?&rdquo;
             </p>
             <br />
             <p className={styles.ommigText}>

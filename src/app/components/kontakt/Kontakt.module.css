@@ -33,12 +33,6 @@
   text-align: center;
 }
 
-.kontaktContent.mobile {
-  padding: 8rem 3rem;
-  width: 90%;
-  height: 70%;
-}
-
 .closeButton {
   position: absolute;
   top: 14%;

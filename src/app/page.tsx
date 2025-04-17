@@ -15,7 +15,7 @@ import Behandlingar from './components/behandlingar/Behandlingar';
 import Ommig from './components/ommig/Ommig';
 import Kontakt from './components/kontakt/Kontakt';
 import { playfairDisplaySC } from './fonts';
-import logo from '../assets/images/logo/successklippochtrimlogo.png'
+import logo from '../assets/images/homepage-img/logo.png'
 
 // Huvudkomponenten för startsidan
 export default function Home() {
@@ -32,17 +32,8 @@ export default function Home() {
   const [showOmmig, setShowOmmig] = useState(false);
   const [showKontakt, setShowKontakt] = useState(false);
 
-  const [isMobile, setIsMobile] = useState(false);
-
   // useEffect hook som körs när komponenten mountas
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
     // Skapar en timer som aktiverar menyn och bakgrundseffekten efter 7 sekunder
     // Detta är samma tid som port-animationen tar
     const timer = setTimeout(() => {
@@ -52,10 +43,7 @@ export default function Home() {
 
     // Cleanup-funktion som körs när komponenten unmountas
     // Detta förhindrar minnesläckor genom att rensa timern
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => clearTimeout(timer);
   }, []); // Tom dependency array betyder att detta körs en gång vid mount
 
   return (
@@ -70,7 +58,8 @@ export default function Home() {
             filter: ['grayscale(0%) blur(0px)', 'grayscale(100%) blur(10px)'],
           } : {}}
           transition={{ 
-            duration: 2,
+            duration: 1.5,
+            ease: "easeInOut"
           }}
         >
           <Image 
@@ -84,26 +73,28 @@ export default function Home() {
         {/* Logotypen */}
         <motion.div
           className={styles.logoContainer}
-          initial={{ scale: 0.3, opacity: 0.3 }}
+          initial={{ scale: 0.15, opacity: 0.3 }}
           animate={{ 
-            scale: isMobile ? [0.3, 0.6, 0.8] : [0.3, 2, 3],
-            opacity: [0.3, 0.3, 0.6, 1, 1, 1, 0],
-            z: [0, 800, 1500]
+            scale: [0.15, 0.75, 1],
+            opacity: [0.3, 1, 0],
+            z: [0, 1200, 2000]
           }}
           transition={{ 
             duration: 7,
-            times: [0, 0.2, 0.4, 0.6, 0.7, 0.85, 1],
-            ease: "linear"
+            times: [0, 0.8, 1],
+            ease: "easeInOut"
           }}
         >
+          
           <Image 
             src={logo}
-            alt="Success Klipp och Trim Logo"
-            width={200}
-            height={200}
-            quality={100}
+            alt="Logo"
             className={styles.logoImage}
+            width={150}
+            height={150}
+            quality={100}
             priority
+            unoptimized
           />
         </motion.div>
         
