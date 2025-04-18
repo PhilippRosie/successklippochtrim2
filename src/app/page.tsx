@@ -31,6 +31,8 @@ export default function Home() {
   const [showBehandlingar, setShowBehandlingar] = useState(false);
   const [showOmmig, setShowOmmig] = useState(false);
   const [showKontakt, setShowKontakt] = useState(false);
+  const [animationKey, setAnimationKey] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   // useEffect hook som körs när komponenten mountas
   useEffect(() => {
@@ -41,10 +43,34 @@ export default function Home() {
       setStartBackgroundEffect(true); // Startar bakgrundseffekten
     }, 7000);
 
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     // Cleanup-funktion som körs när komponenten unmountas
     // Detta förhindrar minnesläckor genom att rensa timern
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []); // Tom dependency array betyder att detta körs en gång vid mount
+
+  const resetAnimation = () => {
+    setShowMenu(false);
+    setStartBackgroundEffect(false);
+    setShowBehandlingar(false);
+    setShowOmmig(false);
+    setShowKontakt(false);
+    setAnimationKey(prev => prev + 1);
+    
+    setTimeout(() => {
+      setShowMenu(true);
+      setStartBackgroundEffect(true);
+    }, 7000);
+  };
 
   return (
     <div className={styles.container}>
@@ -53,6 +79,7 @@ export default function Home() {
       <div className={styles.imageContainer}>
         {/* Bakgrundsbilden */}
         <motion.div
+          key={`bg-${animationKey}`}
           className={styles.backgroundContainer}
           animate={startBackgroundEffect ? {
             filter: ['grayscale(0%) blur(0px)', 'grayscale(100%) blur(10px)'],
@@ -72,10 +99,11 @@ export default function Home() {
 
         {/* Logotypen */}
         <motion.div
+          key={`logo-${animationKey}`}
           className={styles.logoContainer}
-          initial={{ scale: 0.15, opacity: 0.3 }}
+          initial={{ scale: isMobile ? 0.15 : 0.15, opacity: 0.3 }}
           animate={{ 
-            scale: [0.15, 0.75, 1],
+            scale: isMobile ? [0.15, 0.4, 0.5] : [0.15, 0.75, 1],
             opacity: [0.3, 1, 0],
             z: [0, 1200, 2000]
           }}
@@ -93,8 +121,11 @@ export default function Home() {
             width={150}
             height={150}
             quality={100}
-            priority
+            loading="eager"
+            priority={false}
             unoptimized
+            onClick={resetAnimation}
+            style={{ cursor: 'pointer' }}
           />
         </motion.div>
         
