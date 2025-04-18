@@ -67,16 +67,12 @@ export default function Kontakt({ onClose }: KontaktProps) {
             <h3 className={`${amaticSC.className}`}>Kontaktinformation</h3>
             <div className={styles.contactInfo}>
               <div className={styles.contactItem}>
-                <h4>Adress</h4>
-                <p>Hundgatan 123<br />123 45 Stockholm</p>
-              </div>
-              <div className={styles.contactItem}>
-                <h4>Telefon</h4>
-                <p>08-123 45 67</p>
-              </div>
-              <div className={styles.contactItem}>
                 <h4>E-post</h4>
-                <p>info@hundklippning.se</p>
+                <p>successklippochtrim@gmail.com</p>
+              </div>
+              <div className={styles.contactItem}>
+                <h4>Adress</h4>
+                <p>Success Klipp och Trim<br />Kännavägen 11<br />34131 Ljungby</p>
               </div>
             </div>
             {isMounted && (
@@ -114,15 +110,45 @@ export default function Kontakt({ onClose }: KontaktProps) {
             <div className={styles.openingHours}>
               <div className={styles.dayTime}>
                 <div className={styles.dayTimeText}>
-                  <span>Måndag - Fredag</span>
-                  <span>09:00 - 17:00</span>
+                  <span>Måndag</span>
+                  <span>12:00 - 18:00</span>
+                </div>
+              </div>
+              <div className={styles.dayTime}>
+                <div className={styles.dayTimeText}>
+                  <span>Tisdag</span>
+                  <span>12:00 - 17:00</span>
+                  
+                </div>
+                <span className={styles.dropInInfo}>(15:00 - 17:00 Drop in kloklipp & puts ord. pris)</span>
+              </div>
+              <div className={styles.dayTime}>
+                <div className={styles.dayTimeText}>
+                  <span>Onsdag</span>
+                  <span>12:00 - 19:00</span>
+                </div>
+              </div>
+              <div className={styles.dayTime}>
+                <div className={styles.dayTimeText}>
+                  <span>Torsdag</span>
+                  <span>12:00 - 13:30</span>
+                  
+                </div>
+                <span className={styles.dropInInfo}>(Drop in kloklipp & puts ord. pris)</span>
+              </div>
+              <div className={styles.dayTime}>
+                <div className={styles.dayTimeText}>
+                  <span>Fredag</span>
+                  <span>Stängt</span>
                 </div>
               </div>
               <div className={styles.dayTime}>
                 <div className={styles.dayTimeText}>
                   <span>Lördag</span>
-                  <span>10:00 - 15:00</span>
+                  <span>10:00 - 14:00</span>
+                  
                 </div>
+                <span className={styles.dropInInfo}>(Drop in kloklipp & puts)</span>
               </div>
               <div className={styles.dayTime}>
                 <div className={styles.dayTimeText}>
@@ -130,8 +156,29 @@ export default function Kontakt({ onClose }: KontaktProps) {
                   <span>Stängt</span>
                 </div>
               </div>
-              <p className={styles.dropIn}>Drop-in: Måndag - Fredag 09:00 - 16:00</p>
             </div>
+          </section>
+
+          <section className={styles.section}>
+            <h3 className={`${amaticSC.className}`}>Bokning</h3>
+            <p className={styles.bookingInfo}>
+              För att boka en tid, kontakta oss via telefon eller e-post. Vi kommer att hjälpa dig att hitta en lämplig tid som 
+              passar både dig och din hund.
+            </p>
+            <br />
+            <p className={styles.bookingInfo}>
+              <strong className={styles.bookingInfoTitle}>Inför ditt besök:</strong><br />
+              För att besöket ska bli så tryggt och behagligt som möjligt – kom ihåg att rasta din hund ordentligt innan ni 
+              kommer. Om din hund nyligen har varit hos veterinär eller har några särskilda behov, som exempelvis allergier, 
+              ledbesvär eller andra hälsoproblem, är jag tacksam om du meddelar mig det i förväg.
+            </p>
+            <br />
+            <p className={styles.bookingInfo}>
+              <strong className={styles.bookingInfoTitle}>Om du behöver avboka eller blir sen:</strong><br />
+              Behöver du avboka? Inga problem – gör det gärna senast 24 timmar innan bokad tid för att undvika en avgift. 
+              Vid senare avbokning tas en halv kostnad ut. Om du skulle bli mer än 15 minuter sen utan att höra av dig, 
+              räknas tiden som uteblivet besök och hela beloppet debiteras.
+            </p>
           </section>
         </div>
       </div>
