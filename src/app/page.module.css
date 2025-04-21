@@ -170,7 +170,7 @@
     gap: 2rem;
   }
   .menuItem {
-    width: 320px;
+    width: 280px;
     font-size: 1rem;
   }
 }
@@ -180,7 +180,7 @@
     gap: 2rem;
   }
   .menuItem {
-    width: 320px;
+    width: 260px;
     font-size: 1rem;
   }
 }
@@ -193,7 +193,7 @@
     gap: 2.5rem;
   }
   .menuItem {
-    width: 300px;
+    width: 240px;
     font-size: 1rem;
   }
 }
@@ -205,7 +205,7 @@
     gap: 2rem;
   }
   .menuItem {
-    width: 250px;
+    width: 220px;
     font-size: 0.9rem;
   }
 }
