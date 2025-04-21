@@ -16,6 +16,10 @@ import Ommig from './components/ommig/Ommig';
 import Kontakt from './components/kontakt/Kontakt';
 import { playfairDisplaySC } from './fonts';
 import logo from '../assets/images/homepage-img/logo.png'
+import svhfIcon from '../assets/images/icons/svhf.png'
+import facebookIcon from '../assets/images/icons/facebook.png'
+import instagramIcon from '../assets/images/icons/instagram.png'
+import swishIcon from '../assets/images/icons/swish.png'
 
 // Huvudkomponenten för startsidan
 export default function Home() {
@@ -103,7 +107,7 @@ export default function Home() {
           className={styles.logoContainer}
           initial={{ scale: isMobile ? 0.15 : 0.15, opacity: 0.3 }}
           animate={{ 
-            scale: isMobile ? [0.15, 0.4, 0.5] : [0.15, 0.75, 1],
+            scale: isMobile ? [0.15, 0.3, 0.45] : [0.15, 0.75, 1],
             opacity: [0.3, 1, 0],
             z: [0, 1200, 2000]
           }}
@@ -191,6 +195,46 @@ export default function Home() {
           onClick={() => setShowKontakt(true)}
         >
           <span className={styles.menuText}>Kontakt <br /> & <br /> Information</span>
+        </div>
+      </div>
+      
+      {/* Ikoner */}
+      <div className={`${styles.iconsContainer} ${showMenu ? styles.visible : ''}`}>
+        <div className={styles.iconWrapper}>
+          <Image 
+            src={svhfIcon}
+            alt="SVHF"
+            width={50}
+            height={50}
+            className={styles.icon}
+          />
+        </div>
+        <div className={styles.iconWrapper}>
+          <Image 
+            src={facebookIcon}
+            alt="Facebook"
+              width={50}
+            height={50}
+            className={styles.icon}
+          />
+        </div>
+        <div className={styles.iconWrapper}>
+          <Image 
+            src={instagramIcon}
+            alt="Instagram"
+            width={50}
+                height={50}
+            className={styles.icon}
+          />
+        </div>
+        <div className={styles.iconWrapper}>
+          <Image 
+            src={swishIcon}
+            alt="Swish"
+            width={50}
+            height={50}
+            className={styles.icon}
+          />
         </div>
       </div>
       
