@@ -74,6 +74,10 @@ export default function Kontakt({ onClose }: KontaktProps) {
                 <h4>Adress</h4>
                 <p>Success Klipp och Trim<br />Kännavägen 11<br />34131 Ljungby</p>
               </div>
+              <div className={styles.contactItem}>
+                <h4>Telefon</h4>
+                <p onClick={() => window.location.href = 'tel:+46761401289'} style={{ cursor: 'pointer' }}>0761-401289</p>
+              </div>
             </div>
             {isMounted && (
               <div className={styles.mapContainer}>
@@ -89,7 +93,25 @@ export default function Kontakt({ onClose }: KontaktProps) {
                     />
                     <Marker position={position}>
                       <Popup>
-                        Success Klipp och Trim
+                        <div style={{ textAlign: 'center' }}>
+                          <span style={{ textDecoration: 'underline', fontFamily: playfairDisplaySC.style.fontFamily, marginBottom: '8px', display: 'block' }}>Success Klipp och Trim</span>
+                          <span style={{ marginBottom: '8px', display: 'block' }}>Kännavägen 11, 34131 Ljungby</span>
+                          <button 
+                            onClick={() => window.open('https://www.google.com/maps/dir/?api=1&destination=Kännavägen+11,+34131+Ljungby', '_blank')}
+                            style={{
+                              backgroundColor: '#4a4a4a',
+                              color: '#f5f2f4',
+                              border: 'none',
+                              padding: '8px 12px',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              marginTop: '8px',
+                              fontSize: '14px'
+                            }}
+                          >
+                            Vägbeskrivning
+                          </button>
+                        </div>
                       </Popup>
                     </Marker>
                   </MapContainer>

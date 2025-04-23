@@ -145,71 +145,6 @@
   transform: scale(1.05);
 }
 
-@media (max-width: 1440px) {
-  .menuItem {
-    width: 420px;
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  .menuContainer {
-    gap: 2rem;
-  }
-  .menuItem {
-    width: 400px;
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .menuContainer {
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 11rem;
-    gap: 2rem;
-  }
-  .menuItem {
-    width: 280px;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .menuContainer {
-    gap: 2rem;
-  }
-  .menuItem {
-    width: 260px;
-    font-size: 1rem;
-  }
-}
-
-/* iPhone Pro Max */
-@media (max-width: 430px) {
-  .menuContainer {
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 2.5rem;
-  }
-  .menuItem {
-    width: 240px;
-    font-size: 1rem;
-  }
-}
-
-/* Mindre mobiler */
-@media (max-width: 380px) {
-  .menuContainer {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .menuItem {
-    width: 220px;
-    font-size: 0.9rem;
-  }
-}
-
 /* Container för logotypen */
 .logoContainer {
   position: absolute;
@@ -264,18 +199,98 @@
   transition: transform 0.3s ease;
 }
 
-.iconWrapper:hover {
-  transform: scale(1.1);
-}
-
+/* Styling för ikoner */
 .icon {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-/* Media Queries för ikoner */
+/* Styling för sociala medier-ikoner */
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  transform: scale(1.1);
+}
+
+/* Telefonikon för bokning */
+.phoneButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  cursor: pointer;
+}
+
+.phoneButton.visible {
+  opacity: 1;
+}
+
+.phoneIconWrapper {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+.phoneIcon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.phoneText {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries */
+@media (max-width: 1440px) {
+  .menuItem {
+    width: 420px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .menuContainer {
+    gap: 2rem;
+  }
+  .menuItem {
+    width: 400px;
+    font-size: 1.2rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .menuContainer {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 11rem;
+    gap: 2rem;
+  }
+  .menuItem {
+    width: 280px;
+    font-size: 1rem;
+  }
   .iconsContainer {
     bottom: 1.5rem;
     gap: 1.5rem;
@@ -287,6 +302,13 @@
 }
 
 @media (max-width: 480px) {
+  .menuContainer {
+    gap: 2rem;
+  }
+  .menuItem {
+    width: 260px;
+    font-size: 1rem;
+  }
   .iconsContainer {
     top: 1rem;
     bottom: auto;
@@ -302,7 +324,29 @@
   }
 }
 
+/* iPhone Pro Max */
+@media (max-width: 430px) {
+  .menuContainer {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2.5rem;
+  }
+  .menuItem {
+    width: 240px;
+    font-size: 1rem;
+  }
+}
+
+/* Mindre mobiler */
 @media (max-width: 380px) {
+  .menuContainer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .menuItem {
+    width: 220px;
+    font-size: 0.9rem;
+  }
   .iconsContainer {
     top: 0.8rem;
     right: 0.8rem;
@@ -311,6 +355,13 @@
   .iconWrapper {
     width: 40px;
     height: 40px;
+  }
+}
+
+/* Visa telefonikonen endast på mobilskärmar */
+@media (min-width: 769px) {
+  .phoneButton {
+    display: none;
   }
 }
 

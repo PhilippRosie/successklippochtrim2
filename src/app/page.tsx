@@ -19,7 +19,9 @@ import logo from '../assets/images/homepage-img/logo.png'
 import svhfIcon from '../assets/images/icons/svhf.png'
 import facebookIcon from '../assets/images/icons/facebook.png'
 import instagramIcon from '../assets/images/icons/instagram.png'
-import swishIcon from '../assets/images/icons/swish.png'
+import swishIcon from '../assets/images/icons/swish.png'  
+import phoneIcon from '../assets/images/icons/phone.png';
+import CookiePopup from './components/cookiePopup/CookiePopup';
 
 // Huvudkomponenten för startsidan
 export default function Home() {
@@ -37,6 +39,8 @@ export default function Home() {
   const [showKontakt, setShowKontakt] = useState(false);
   const [animationKey, setAnimationKey] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [showPhoneButton, setShowPhoneButton] = useState(false);
+  const [showCookiePopup, setShowCookiePopup] = useState(false);
 
   // useEffect hook som körs när komponenten mountas
   useEffect(() => {
@@ -62,6 +66,23 @@ export default function Home() {
     };
   }, []); // Tom dependency array betyder att detta körs en gång vid mount
 
+  useEffect(() => {
+    if (showMenu) {
+      setTimeout(() => {
+        setShowPhoneButton(true);
+      }, 1500);
+    }
+  }, [showMenu]);
+
+  useEffect(() => {
+    // Simulera att sidan har laddats in
+    const timer = setTimeout(() => {
+      setShowCookiePopup(true);
+    }, 8000); // Visa popup efter 8 sekunder (efter att alla animationer är klara)
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const resetAnimation = () => {
     setShowMenu(false);
     setStartBackgroundEffect(false);
@@ -74,6 +95,16 @@ export default function Home() {
       setShowMenu(true);
       setStartBackgroundEffect(true);
     }, 7000);
+  };
+
+  const handleAcceptCookies = () => {
+    setShowCookiePopup(false);
+    // Här kan du lägga till logik för att spara användarens val
+  };
+
+  const handleDeclineCookies = () => {
+    setShowCookiePopup(false);
+    // Här kan du lägga till logik för att hantera avvisande av cookies
   };
 
   return (
@@ -210,32 +241,61 @@ export default function Home() {
           />
         </div>
         <div className={styles.iconWrapper}>
-          <Image 
-            src={facebookIcon}
-            alt="Facebook"
+          <a 
+            href="https://www.facebook.com/people/Successklippochtrim/61571952051397/?_rdr" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Image 
+              src={facebookIcon}
+              alt="Facebook"
               width={50}
-            height={50}
-            className={styles.icon}
-          />
+              height={50}
+              className={styles.socialIcon}
+            />
+          </a>
         </div>
         <div className={styles.iconWrapper}>
-          <Image 
-            src={instagramIcon}
-            alt="Instagram"
-            width={50}
-                height={50}
-            className={styles.icon}
-          />
+          <a 
+            href="https://www.instagram.com/success_klippochtrim/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Image 
+              src={instagramIcon}
+              alt="Instagram"
+              width={50}
+              height={50}
+              className={styles.socialIcon}
+            />
+          </a>
         </div>
         <div className={styles.iconWrapper}>
           <Image 
             src={swishIcon}
             alt="Swish"
             width={50}
-            height={50}
+            height={60}
             className={styles.icon}
           />
         </div>
+      </div>
+      
+      {/* Telefonikon för bokning på mobil */}
+      <div 
+        className={`${styles.phoneButton} ${showPhoneButton ? styles.visible : ''}`}
+        onClick={() => window.location.href = 'tel:+46761401289'}
+      >
+        <div className={styles.phoneIconWrapper}>
+          <Image 
+            src={phoneIcon}
+            alt="Boka"
+            width={30}
+            height={30}
+            className={styles.phoneIcon}
+          />
+        </div>
+        <span className={styles.phoneText}>Boka</span>
       </div>
       
       {/* Lägg till Treatments-komponenten i slutet av return */}
@@ -249,6 +309,10 @@ export default function Home() {
 
       {showKontakt && (
         <Kontakt onClose={() => setShowKontakt(false)} />
+      )}
+
+      {showCookiePopup && (
+        <CookiePopup onAccept={handleAcceptCookies} onDecline={handleDeclineCookies} />
       )}
     </div>
   )
