@@ -41,4 +41,38 @@
 .logoLink:hover {
   transform: scale(1.05);
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .header {
+    height: 120px;
+    padding-top: 15px;
+  }
+  .logo {
+    width: 150px !important;
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 100px;
+    padding-top: 10px;
+  }
+  .logo {
+    width: 120px !important;
+    height: 170px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .header {
+    height: 90px;
+    padding-top: 8px;
+  }
+  .logo {
+    width: 100px !important;
+    height: 150px !important;
+  }
+}
   
