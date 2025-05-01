@@ -76,7 +76,7 @@ export default function Kontakt({ onClose }: KontaktProps) {
               </div>
               <div className={styles.contactItem}>
                 <h4>Telefon</h4>
-                <p onClick={() => window.location.href = 'tel:+46761401289'} style={{ cursor: 'pointer' }}>0761-401289</p>
+                <p onClick={() => window.location.href = 'tel:+46761401289'} style={{ cursor: 'pointer' }}>0793-117616</p>
               </div>
             </div>
             {isMounted && (

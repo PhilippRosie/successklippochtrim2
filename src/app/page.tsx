@@ -284,7 +284,7 @@ export default function Home() {
       {/* Telefonikon för bokning på mobil */}
       <div 
         className={`${styles.phoneButton} ${showPhoneButton ? styles.visible : ''}`}
-        onClick={() => window.location.href = 'tel:+46761401289'}
+        onClick={() => window.location.href = 'tel:+46793117616'}
       >
         <div className={styles.phoneIconWrapper}>
           <Image 
