@@ -62,15 +62,7 @@ export default function Ommig({ onClose }: OmmigProps) {
               och katterna Tussan och Doris.
             </p>
             <p className={styles.ommigText}>
-              Jag är en glad, social och sprallig person som älskar att få människor (och hundar!) att känna sig 
-              trygga och väl omhändertagna. Vid sidan av salongen jobbar jag även 50 % på Postnord TPL, där jag 
-              är inlånad som logistikkoordinator – men mitt hjärta finns här, i trimrummet, med saxen i handen 
-              och en svans som viftar framför mig.
-            </p>
-            <p className={styles.ommigText}>
-              Det bästa jag vet är att få bygga relationer – både med mina fyrbenta kunder och deras matte eller 
-              husse. Hos mig ska du alltid känna dig sedd, välkommen och trygg. Målet? Att din hund ska lämna 
-              salongen glad, stolt och skinande fin – och att du som ägare känner: &ldquo;Här vill jag komma tillbaka.&rdquo;
+            Hos mig ska du alltid känna dig sedd, välkommen och trygg. Målet? Att din hund ska lämna salongen glad, stolt och skinande fin – och att du som ägare känner: “Här vill jag komma tillbaka.”
             </p>
             <br />
           </section>
@@ -88,10 +80,8 @@ export default function Ommig({ onClose }: OmmigProps) {
             </p>
             <br />
             <p className={styles.ommigText}>
-              En av mina stora inspirationskällor är Gun, en uppfödare och vän som tidigt lärde mig grunderna i 
-              klippning. Men livet tog mig på andra vägar ett tag – tills en dag då min barndomsvän Jennie, som 
-              jag känt sedan vi var sju, ringde och skojade:
-              &ldquo;Ska du inte börja utbilda dig hos mig och starta eget?&rdquo;
+            En av mina stora inspirationskällor är Gun, en uppfödare och väldigt nära vän som tidigt lärde mig grunderna i klippning. (Gun drev ”Success kennel” där hon födde upp Bichon Frise och det är för att hedra hennes minne som jag valt att heta just ”Success Klipp och Trim”). Men livet tog mig på andra vägar ett tag – tills en dag då min barndomsvän Jennie, som jag känt sedan vi var sju, ringde och skojade:
+            – Ska du inte börja utbilda dig hos mig och starta eget?
             </p>
             <br />
             <p className={styles.ommigText}>
