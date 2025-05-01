@@ -80,7 +80,7 @@ export default function Ommig({ onClose }: OmmigProps) {
             </p>
             <br />
             <p className={styles.ommigText}>
-            en av mina stora inspirationskällor är Gun, en uppfödare och väldigt nära vän som tidigt lärde mig grunderna i klippning. (Gun drev ”Success kennel” där hon födde upp Bichon Frise och det är för att hedra hennes minne som jag valt att heta just ”Success Klipp och Trim”). Men livet tog mig på andra vägar ett tag – tills en dag då min barndomsvän Jennie, som jag känt sedan vi var sju, ringde och skojade:
+            En av mina stora inspirationskällor är Gun, en uppfödare och väldigt nära vän som tidigt lärde mig grunderna i klippning. (Gun drev ”Success kennel” där hon födde upp Bichon Frise och det är för att hedra hennes minne som jag valt att heta just ”Success Klipp och Trim”). Men livet tog mig på andra vägar ett tag – tills en dag då min barndomsvän Jennie, som jag känt sedan vi var sju, ringde och skojade:
             – Ska du inte börja utbilda dig hos mig och starta eget?
             </p>
             <br />
