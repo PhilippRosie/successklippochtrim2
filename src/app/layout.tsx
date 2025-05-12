@@ -3,9 +3,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Success Klipp och Trim | Frisörsalong',
-  description: 'Välkommen till Success Klipp och Trim - Din lokala frisörsalong med professionell service och personlig touch.',
-  keywords: 'frisör, frisörsalong, hårklippning, hårfärgning, Success Klipp och Trim',
+  title: "Hundfrisör i Ljungby – Trimning & Pälsvård | Success Klipp & Trim",
+  description: "Letar du efter en hundfrisör i Ljungby? Success Klipp & Trim erbjuder trimning, klippning och pälsvård med omtanke. Boka tid för din hund idag!",
+  keywords: "hundfrisör Ljungby, hundklippning Ljungby, hundtrim Ljungby, pälsvård hund Ljungby, Success Klipp & Trim, boka hundklippning"
 }
 
 export default function RootLayout({
