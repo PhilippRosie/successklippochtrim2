@@ -133,7 +133,11 @@ export default function Kontakt({ onClose }: KontaktProps) {
               <div className={styles.dayTime}>
                 <div className={styles.dayTimeText}>
                   <span>Måndag</span>
+<<<<<<< HEAD
                   <span>09:00 - 18:00</span>
+=======
+                  <span>12:00 - 18:00</span>
+>>>>>>> origin/main
                 </div>
               </div>
               <div className={styles.dayTime}>
@@ -142,7 +146,11 @@ export default function Kontakt({ onClose }: KontaktProps) {
                   <span>12:00 - 17:00</span>
                   
                 </div>
+<<<<<<< HEAD
                 <span className={styles.dropInInfo}>(16:00 - 17:00 Drop in kloklipp & puts ord. pris)</span>
+=======
+                <span className={styles.dropInInfo}>(15:00 - 17:00 Drop in kloklipp & puts ord. pris)</span>
+>>>>>>> origin/main
               </div>
               <div className={styles.dayTime}>
                 <div className={styles.dayTimeText}>
@@ -152,6 +160,7 @@ export default function Kontakt({ onClose }: KontaktProps) {
               </div>
               <div className={styles.dayTime}>
                 <div className={styles.dayTimeText}>
+<<<<<<< HEAD
                   <span>Torsdag </span>
                   <span>12:00 - 17:00</span>
                   
@@ -162,6 +171,32 @@ export default function Kontakt({ onClose }: KontaktProps) {
                 <div className={styles.dayTimeText}>
                   <span>Fre - Sön</span>
                   <span>STÄNGT</span>
+=======
+                  <span>Torsdag</span>
+                  <span>12:00 - 13:30</span>
+                  
+                </div>
+                <span className={styles.dropInInfo}>(Drop in kloklipp & puts ord. pris)</span>
+              </div>
+              <div className={styles.dayTime}>
+                <div className={styles.dayTimeText}>
+                  <span>Fredag</span>
+                  <span>Stängt</span>
+                </div>
+              </div>
+              <div className={styles.dayTime}>
+                <div className={styles.dayTimeText}>
+                  <span>Lördag</span>
+                  <span>10:00 - 14:00</span>
+                  
+                </div>
+                <span className={styles.dropInInfo}>(Drop in kloklipp & puts)</span>
+              </div>
+              <div className={styles.dayTime}>
+                <div className={styles.dayTimeText}>
+                  <span>Söndag</span>
+                  <span>Stängt</span>
+>>>>>>> origin/main
                 </div>
               </div>
             </div>

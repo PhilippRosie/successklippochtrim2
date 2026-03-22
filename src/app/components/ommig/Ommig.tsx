@@ -56,10 +56,17 @@ export default function Ommig({ onClose }: OmmigProps) {
             </div>
             <h3 className={`${amaticSC.className}`}>Välkommen till Success Klipp och Trim</h3>
             <p className={styles.ommigText}>
+<<<<<<< HEAD
               Jag heter Nathalie Olsson, 37 år, och är hjärtat bakom Success Klipp och Trim – en hundfrisörsalong 
               med fokus på kvalitet, trygghet och kärlek till varje enskild hund. Jag bor i Bolmen, strax utanför 
               Ljungby, tillsammans med min man Johan, våra tvillingdöttrar Wilma och Wilda, vår Cane Corso Atlaz 
               och katterna Zelda och Doris.
+=======
+              Jag heter Nathalie Olsson, 36 år, och är hjärtat bakom Success Klipp och Trim – en hundfrisörsalong 
+              med fokus på kvalitet, trygghet och kärlek till varje enskild hund. Jag bor i Bolmen, strax utanför 
+              Ljungby, tillsammans med min man Johan, våra tvillingdöttrar Wilma och Wilda, vår Cane Corso Atlaz 
+              och katterna Tussan och Doris.
+>>>>>>> origin/main
             </p>
             <p className={styles.ommigText}>
             Hos mig ska du alltid känna dig sedd, välkommen och trygg. Målet? Att din hund ska lämna salongen glad, stolt och skinande fin – och att du som ägare känner: “Här vill jag komma tillbaka.”

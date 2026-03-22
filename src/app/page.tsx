@@ -241,6 +241,7 @@ export default function Home() {
           />
         </div>
         <div className={styles.iconWrapper}>
+<<<<<<< HEAD
           <a
             className={styles.socialLink}
             href="https://www.facebook.com/people/Successklippochtrim/61571952051397/"
@@ -256,10 +257,24 @@ export default function Home() {
               height={40}
               className={styles.socialIcon}
               decoding="async"
+=======
+          <a 
+            href="https://www.facebook.com/people/Successklippochtrim/61571952051397/?_rdr" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Image 
+              src={facebookIcon}
+              alt="Facebook"
+              width={50}
+              height={50}
+              className={styles.socialIcon}
+>>>>>>> origin/main
             />
           </a>
         </div>
         <div className={styles.iconWrapper}>
+<<<<<<< HEAD
           <a
             className={styles.socialLink}
             href="https://www.instagram.com/success_klippochtrim/"
@@ -274,6 +289,19 @@ export default function Home() {
               height={40}
               className={styles.socialIcon}
               decoding="async"
+=======
+          <a 
+            href="https://www.instagram.com/success_klippochtrim/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Image 
+              src={instagramIcon}
+              alt="Instagram"
+              width={50}
+              height={50}
+              className={styles.socialIcon}
+>>>>>>> origin/main
             />
           </a>
         </div>
