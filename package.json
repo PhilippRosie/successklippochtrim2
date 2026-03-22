@@ -12,11 +12,7 @@
     "@types/react-leaflet": "^2.8.3",
     "framer-motion": "^12.6.2",
     "leaflet": "^1.9.4",
-<<<<<<< HEAD
     "next": "^16.1.7",
-=======
-    "next": "15.2.4",
->>>>>>> origin/main
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-leaflet": "^5.0.0"

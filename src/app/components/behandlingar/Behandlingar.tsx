@@ -15,15 +15,15 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
 
   useEffect(() => {
     setIsMounted(true);
-    
+
     const handleResize = () => {
       if (typeof window !== 'undefined') {
         setIsMobile(window.innerWidth <= 768);
       }
     };
-    
-    handleResize(); // Kör direkt för initial check
-    
+
+    handleResize();
+
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
@@ -32,7 +32,7 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
 
   return (
     <div className={styles.behandlingarContainer} onClick={onClose}>
-      <div 
+      <div
         className={`${styles.behandlingarContent} ${isMounted && isMobile ? styles.mobile : ''}`}
         onClick={e => e.stopPropagation()}
         style={{ '--frame-image': `url(${frameSideImage.src})` } as React.CSSProperties}
@@ -47,41 +47,25 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
             <div className={styles.behandling}>
               <span>Klippning XS-S</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>fr 670 kr</span>
-=======
-                <span>fr 660 kr</span>
->>>>>>> origin/main
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Klippning M-L</span>
               <div className={styles.info}>
-<<<<<<< HEAD
-                  <span>fr 690 kr</span>
-=======
-                  <span>fr 680 kr</span>
->>>>>>> origin/main
+                <span>fr 690 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Klippning XL</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>fr 750 kr</span>
-=======
-                <span>fr 730 kr</span>
->>>>>>> origin/main
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Valp intro</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>fr 670 kr</span>
-=======
-                <span>fr 660 kr</span>
->>>>>>> origin/main
               </div>
             </div>
           </section>
@@ -92,31 +76,19 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
             <div className={styles.behandling}>
               <span>Fällnings behandling XS-S</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>fr 690 kr</span>
-=======
-                <span>fr 660 kr</span>
->>>>>>> origin/main
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Fällnings behandling M-L</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>fr 710 kr</span>
-=======
-                <span>fr 680 kr</span>
->>>>>>> origin/main
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Fällnings behandling XL</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>fr 750 kr</span>
-=======
-                <span>fr 730 kr</span>
->>>>>>> origin/main
               </div>
             </div>
           </section>
@@ -127,27 +99,18 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
             <div className={styles.behandling}>
               <span>Kloklipp</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>190 kr</span>
-=======
-                <span>185 kr</span>
->>>>>>> origin/main
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Analtömning</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>200 kr</span>
-=======
-                <span>199 kr</span>
->>>>>>> origin/main
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Puts</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>280 kr</span>
               </div>
             </div>
@@ -155,9 +118,6 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
               <span>Öronplock</span>
               <div className={styles.info}>
                 <span>200 kr</span>
-=======
-                <span>275 kr</span>
->>>>>>> origin/main
               </div>
             </div>
           </section>
@@ -168,31 +128,19 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
             <div className={styles.behandling}>
               <span>Spa XS-S</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>fr 670 kr</span>
-=======
-                <span>fr 660 kr</span>
->>>>>>> origin/main
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Spa M-L</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>fr 690 kr</span>
-=======
-                <span>fr 680 kr</span>
->>>>>>> origin/main
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Spa XL</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>fr 740 kr</span>
-=======
-                <span>fr 730 kr</span>
->>>>>>> origin/main
               </div>
             </div>
           </section>
@@ -213,43 +161,25 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
               </div>
             </div>
             <div className={styles.behandling}>
-<<<<<<< HEAD
               <span>Analtömning bokning</span>
               <div className={styles.info}>
                 <span>295 kr</span>
-=======
-              <span>Anal tömning bokning</span>
-              <div className={styles.info}>
-                <span>250 kr</span>
->>>>>>> origin/main
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Öronplock bokning</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>295 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
               <span>+ Öronplock</span>
-=======
-                <span>250 kr</span>
-              </div>
-            </div>
-            <div className={styles.behandling}>
-              <span>+ Öron plock</span>
->>>>>>> origin/main
               <div className={styles.info}>
                 <span>100 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
-<<<<<<< HEAD
               <span>+ Analtömning</span>
-=======
-              <span>+ Anal tömning</span>
->>>>>>> origin/main
               <div className={styles.info}>
                 <span>70 kr</span>
               </div>
@@ -262,31 +192,19 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
             <div className={styles.behandling}>
               <span>Trimning XS-S</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>fr 700 kr</span>
-=======
-                <span>fr 660 kr</span>
->>>>>>> origin/main
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Trimning M-L</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>fr 730 kr</span>
-=======
-                <span>fr 680 kr</span>
->>>>>>> origin/main
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Trimning XL</span>
               <div className={styles.info}>
-<<<<<<< HEAD
                 <span>fr 770 kr</span>
-=======
-                <span>fr 730 kr</span>
->>>>>>> origin/main
               </div>
             </div>
           </section>
