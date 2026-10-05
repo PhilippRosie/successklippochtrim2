@@ -47,48 +47,94 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
             <div className={styles.behandling}>
               <span>Klippning XS-S</span>
               <div className={styles.info}>
-                <span>fr 670 kr</span>
+                <span>120 min</span><span>1050 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
-              <span>Klippning M-L</span>
+              <span>Klippning M</span>
               <div className={styles.info}>
-                <span>fr 690 kr</span>
+                <span>120 min</span><span>1250 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
-              <span>Klippning XL</span>
+              <span>Klippning L-XL</span>
               <div className={styles.info}>
-                <span>fr 750 kr</span>
+                <span>120 min</span><span>1850 kr</span>
+              </div>
+            </div>
+            <div className={styles.behandling}>
+              <span>Klippning XXL</span>
+              <div className={styles.info}>
+                <span>240 min</span><span>från 850 kr</span>
+              </div>
+            </div>
+            <div className={styles.behandling}>
+              <span>Valp paket</span>
+              <div className={styles.info}>
+                <span>120 min</span><span>2250 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Valp intro</span>
               <div className={styles.info}>
-                <span>fr 670 kr</span>
+                <span>120 min</span><span>från 670 kr</span>
               </div>
             </div>
           </section>
           <br />
 
           <section className={styles.section}>
+            <h3 className={`${amaticSC.className}`}>Budget Klippning</h3>
+            <div className={styles.behandling}>
+              <span>Budget XS-S</span>
+              <div className={styles.info}>
+                <span>120 min</span><span>850 kr</span>
+              </div>
+            </div>
+            <div className={styles.behandling}>
+              <span>Budget M</span>
+              <div className={styles.info}>
+                <span>120 min</span><span>1000 kr</span>
+              </div>
+            </div>
+            <div className={styles.behandling}>
+              <span>Budget L-XL</span>
+              <div className={styles.info}>
+                <span>120 min</span><span>1450 kr</span>
+              </div>
+            </div>
+            <div className={styles.behandling}>
+              <span>Budget XXL</span>
+              <div className={styles.info}>
+                <span>120 min</span><span>från 850 kr</span>
+              </div>
+            </div>
+          </section>
+
+          <section className={styles.section}>
             <h3 className={`${amaticSC.className}`}>Fällnings behandling</h3>
             <div className={styles.behandling}>
               <span>Fällnings behandling XS-S</span>
               <div className={styles.info}>
-                <span>fr 690 kr</span>
+                <span>120 min</span><span>750 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
-              <span>Fällnings behandling M-L</span>
+              <span>Fällnings behandling M</span>
               <div className={styles.info}>
-                <span>fr 710 kr</span>
+                <span>120 min</span><span>850 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
-              <span>Fällnings behandling XL</span>
+              <span>Fällnings behandling L-XL</span>
               <div className={styles.info}>
-                <span>fr 750 kr</span>
+                <span>120 min</span><span>1000 kr</span>
+              </div>
+            </div>
+            <div className={styles.behandling}>
+              <span>Fällnings behandling XXL</span>
+              <div className={styles.info}>
+                <span>120 min</span><span>från 850 kr</span>
               </div>
             </div>
           </section>
@@ -99,25 +145,25 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
             <div className={styles.behandling}>
               <span>Kloklipp</span>
               <div className={styles.info}>
-                <span>190 kr</span>
+                <span>15 min</span><span>190 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Analtömning</span>
               <div className={styles.info}>
-                <span>200 kr</span>
+                <span>15 min</span><span>200 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Puts</span>
               <div className={styles.info}>
-                <span>280 kr</span>
+                <span>30 min</span><span>280 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Öronplock</span>
               <div className={styles.info}>
-                <span>200 kr</span>
+                <span>15 min</span><span>200 kr</span>
               </div>
             </div>
           </section>
@@ -128,19 +174,19 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
             <div className={styles.behandling}>
               <span>Spa XS-S</span>
               <div className={styles.info}>
-                <span>fr 670 kr</span>
+                <span>120 min</span><span>750 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
-              <span>Spa M-L</span>
+              <span>Spa M</span>
               <div className={styles.info}>
-                <span>fr 690 kr</span>
+                <span>120 min</span><span>850 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
-              <span>Spa XL</span>
+              <span>Spa L-XL</span>
               <div className={styles.info}>
-                <span>fr 740 kr</span>
+                <span>120 min</span><span>1000 kr</span>
               </div>
             </div>
           </section>
@@ -151,37 +197,37 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
             <div className={styles.behandling}>
               <span>Kloklipp bokning</span>
               <div className={styles.info}>
-                <span>255 kr</span>
+                <span>15 min</span><span>från 255 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Puts bokning</span>
               <div className={styles.info}>
-                <span>355 kr</span>
+                <span>30 min</span><span>från 355 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Analtömning bokning</span>
               <div className={styles.info}>
-                <span>295 kr</span>
+                <span>15 min</span><span>från 295 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Öronplock bokning</span>
               <div className={styles.info}>
-                <span>295 kr</span>
+                <span>15 min</span><span>från 295 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
               <span>+ Öronplock</span>
               <div className={styles.info}>
-                <span>100 kr</span>
+                <span>15 min</span><span>från 100 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
               <span>+ Analtömning</span>
               <div className={styles.info}>
-                <span>70 kr</span>
+                <span>15 min</span><span>från 100 kr</span>
               </div>
             </div>
           </section>
@@ -192,19 +238,19 @@ export default function Behandlingar({ onClose }: BehandlingarProps) {
             <div className={styles.behandling}>
               <span>Trimning XS-S</span>
               <div className={styles.info}>
-                <span>fr 700 kr</span>
+                <span>360 min</span><span>från 700 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Trimning M-L</span>
               <div className={styles.info}>
-                <span>fr 730 kr</span>
+                <span>360 min</span><span>från 730 kr</span>
               </div>
             </div>
             <div className={styles.behandling}>
               <span>Trimning XL</span>
               <div className={styles.info}>
-                <span>fr 770 kr</span>
+                <span>360 min</span><span>från 770 kr</span>
               </div>
             </div>
           </section>
